@@ -1,0 +1,42 @@
+'''
+All constants related to simulating localization data
+'''
+import numpy as np
+
+ROOM_SIZE_MIN = 3 # Min room wall dimension
+ROOM_SIZE_MAX = 9 # Max room wall dimension
+DIST_FROM_WALL = 0.5 # Distance of microphone from wall
+SNR = [0, 30] # SNR value in dB
+DISTANCE_BETWEEN_MICROPHONE = 0.1
+DISTANCE_BETWEEN_ELEMENTS = 0.1
+RT60_RANGE = [0.3, 1] # Changed from 0.03 to 0.3
+SAMPLING_RATE = 16000
+RNDSEED = 83534023
+#FEAT_COMPUTE_DUR = 0.025 # in seconds
+FEAT_COMPUTE_DUR = 0.1 # in seconds
+MIN_SEGMENT_SIZE_FOR_SEARCH = 0.125
+#MIN_SEGMENT_SIZE_FOR_SEARCH = 0.120
+KALDI_FRAME_DUR = 0.025
+#KALDI_FRAME_SHIFT = 0.010 # in seconds
+KALDI_FRAME_SHIFT = 0.010
+HOP_LENGTH = int(SAMPLING_RATE * KALDI_FRAME_SHIFT)
+POSSIBLE_SPEECH_START_IN_PERCENTAGE = 0.01 # speech start in wav file
+NFFT = int(FEAT_COMPUTE_DUR * SAMPLING_RATE)
+WINDOW = np.sin((np.array(range(NFFT))+0.5)/NFFT * np.pi)
+STFT_BINS = (NFFT//2) + 1
+SOUND_SPEED = 340 # in m/s
+SILENCE_IDS = np.arange(11)
+NUMBER_OF_FRAMES_REQD_PER_FILE = 1
+MAX_FEAT_PER_BUNCH = 5000
+#MAX_FEAT_PER_BUNCH = 20
+EARLY_ECHOES = 0.05 # Amount of early echoes in seconds
+MAX_SRC_MIC_DIST = 5 # In meters
+FRAMES_TO_COMPUTE_SSN = 3000
+
+# Sequence localization
+SEQUENCE_DURATION = 0.5 # In seconds
+SEQUENCE_STFT_SHIFT = 0.05
+NUMBER_OF_WORDS_REQD_PER_FILE = 1
+#IGNORE_WORDS = [1263]
+IGNORE_WORDS = [257]
+KALDI_NFFT = int(KALDI_FRAME_DUR * SAMPLING_RATE)

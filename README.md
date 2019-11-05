@@ -9,7 +9,7 @@ Code to simulate a reverberated, noisy version of the WSJ-2MIX dataset.
 
 ## Instructions
 
-Run ``` ./create_corrupted_speech.sh```
+Run ``` ./create_corrupted_speech.sh --stage 0 --wsj_data_path  wsj_path --chime5_wav_base chime_path --dihard_sad_label_path dihard_path --dest save_path```
 
 ## Output Data
 Creates the following sub-folders in each of tr, tt and cv folders:

@@ -1,13 +1,13 @@
 stage=0
 # Should contain 2speakers directory
 wsj_data_path="/srv/storage/talc3@talc-data.nancy/multispeech/calcul/users/ssivasankaran/experiments/data/speech_separation/wsj0-mix/"
-CHIME5_WAV_BASE='/srv/storage/talc@talc-data.nancy/multispeech/corpus/speech_recognition/CHiME5/audio/'
+chime5_wav_base='/srv/storage/talc@talc-data.nancy/multispeech/corpus/speech_recognition/CHiME5/audio/'
 dihard_sad_label_path="$HOME/experiments/data/dihard/LDC2019E31_Second_DIHARD_Challenge_Development_Data/data/multichannel/sad/"
-DEST="dataset/2speakers_reverb_kinect"
+dest="dataset/2speakers_reverb_kinect"
 
+. ./parse_options.sh
 
-mkdir -p $DEST
-
+mkdir -p $dest
 
 # Path to download the simulated RIRs. Dont change
 rir_download_path="https://zenodo.org/record/3520737/files/kinect_rir.tar.gz"
@@ -19,24 +19,24 @@ cv_parallel="013"
 tr_SNR=10
 cv_SNR=10
 tt_SNR=15
-chime_noise_dest="$DEST/chime5_noise"
+chime_noise_dest="$dest/chime5_noise"
 
 if [ $stage -le 0 ]; then
     # Download the RIRs
-    if [ ! -d $DEST/kinect_rir ]; then
-        wget $rir_download_path -O $DEST/kinect_rir.tar.gz
-        tar -xvzf $DEST/kinect_rir.tar.gz -C $DEST || exit 1;
+    if [ ! -d $dest/kinect_rir ]; then
+        wget $rir_download_path -O $dest/kinect_rir.tar.gz
+        tar -xvzf $dest/kinect_rir.tar.gz -C $dest || exit 1;
         # Remove the downloaded tar file to save space
-        rm $DEST/kinect_rir.tar.gz 
-        ln -s $DEST/kinect_rir
+        rm $dest/kinect_rir.tar.gz 
+        ln -s $dest/kinect_rir
     else
-        echo "$DEST/kinect_rir already exists. Skipping download"
+        echo "$dest/kinect_rir already exists. Skipping download"
     fi
 fi
 
 if [ $stage -le 1 ]; then
     # Extract chime noise
-    bash noise_from_chime5/getNonSpeechSegments.sh $CHIME5_WAV_BASE $chime_noise_dest  $dihard_sad_label_path || exit 1;
+    bash noise_from_chime5/getNonSpeechSegments.sh $chime5_wav_base $chime_noise_dest  $dihard_sad_label_path || exit 1;
 fi
 
 if [ $stage -le 2 ]; then
@@ -55,7 +55,7 @@ if [ $stage -le 2 ]; then
         #path to wsj-2mix dataset
         wsj2_mix_base="$wsj_data_path/${src_count}speakers/wav16k/${min_max}/${dataset}"
         noise_list="$chime_noise_dest/lists/$dataset"
-        dest_base="$DEST/${src_count}speakers_reverb_kinect_chime_noise_corrected/wav16k/min/${dataset}/"
+        dest_base="$dest/${src_count}speakers_reverb_kinect_chime_noise_corrected/wav16k/min/${dataset}/"
         mkdir -p $dest_base
         rir_base_path="kinect_rir/${dataset}/"
         start=0

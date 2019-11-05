@@ -14,5 +14,5 @@ Run ``` ./create_corrupted_speech.sh```
 
 ## References
 
-[Analyzing the impact of speaker localization errors on speech separation for automatic speech recognition] (https://arxiv.org/abs/1910.11114)
+[Analyzing the impact of speaker localization errors on speech separation for automatic speech recognition](https://arxiv.org/abs/1910.11114)
 

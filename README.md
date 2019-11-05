@@ -14,8 +14,8 @@ Run ``` ./create_corrupted_speech.sh```
 ## Output Data
 Creates the following sub-folders in each of tr, tt and cv folders:
 
-* s1 : spatial image of s1 (Reverberated version of the s1)
-* s2 : spatial image of s2 (Reverberated version of the s2)
+* s1 : spatial image of s1 (Reverberated version of s1 speaker)
+* s2 : spatial image of s2 (Reverberated version of s2 speaker)
 * s1_direct :  direct component of s1 at each of the microphones
 * s2_direct : direct component of s2 at each of the microphones
 * s1_early : Contains only the early reflections (first 50 ms. see config.py to change the value) of s1 at each of the microphones

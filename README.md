@@ -1,5 +1,5 @@
-# Reverberated_WSJ_2MIX
-Code to simulate a reverberated, noisy version of the WSJ-2MIX dataset. 
+# Kinect-WSJ
+Code to simulate a reverberated, noisy version of the WSJ0-2MIX dataset. Microphones are placed on a linear array with spacing between the devices resembling that of Microsoft Kinect &trade;, the device used to record the CHiME-5 dataset. This was done so that we could use the real ambient noise captured as part of CHiME-5 dataset. The room impulse responses (RIR) were simulated for a sampling rate of 16,000 Hz.
 
 
 ## Requirements
@@ -10,6 +10,10 @@ Code to simulate a reverberated, noisy version of the WSJ-2MIX dataset.
 ## Instructions
 
 Run ``` ./create_corrupted_speech.sh --stage 0 --wsj_data_path  wsj_path --chime5_wav_base chime_path --dihard_sad_label_path dihard_path --dest save_path```
+* wsj_path :  Path to precomputed wsj-2mix dataset. Should contain the folder 2speakers/wav16k/
+* chime_path : Path to chime-5 dataset. Should contain the folders train, dev and eval
+* dihard_path : Path to dihard labels. Should contain ```*.lab``` files for the train and dev set
+
 
 ## Output Data
 Creates the following sub-folders in each of tr, tt and cv folders:
@@ -23,6 +27,7 @@ Creates the following sub-folders in each of tr, tt and cv folders:
 * noise : Contains the noise imposed for each mixture
 * mix : s1 + s2 + noise
 * list.yaml : A yaml file containing the positions and direction of arrival (DOA) for each utterance and speaker
+
 
 ## References
 

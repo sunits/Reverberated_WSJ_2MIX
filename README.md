@@ -10,10 +10,17 @@ Code to simulate a reverberated, noisy version of the WSJ0-2MIX dataset. Microph
 ## Instructions
 
 Run ``` ./create_corrupted_speech.sh --stage 0 --wsj_data_path  wsj_path --chime5_wav_base chime_path --dihard_sad_label_path dihard_path --dest save_path```
+
+### Paths
 * wsj_path :  Path to precomputed wsj-2mix dataset. Should contain the folder 2speakers/wav16k/
 * chime_path : Path to chime-5 dataset. Should contain the folders train, dev and eval
 * dihard_path : Path to dihard labels. Should contain ```*.lab``` files for the train and dev set
 
+
+### Stages:
+* stage 0:  Download RIR files (~ 7 GB) to save_path, deflate the compressed files and create a softlink to the RIRs in the current folder
+* stage 1:  Extract chime 5 noise using dihard labels
+* stage 2:  Create the mixture. See the code to allow parallelization
 
 ## Output Data
 Creates the following sub-folders in each of tr, tt and cv folders:
@@ -22,8 +29,8 @@ Creates the following sub-folders in each of tr, tt and cv folders:
 * s2 : spatial image of s2 (Reverberated version of s2 speaker)
 * s1_direct :  direct component of s1 at each of the microphones
 * s2_direct : direct component of s2 at each of the microphones
-* s1_early : Contains only the early reflections (first 50 ms. see config.py to change the value) of s1 at each of the microphones
-* s2_early : Contains only the early reflections (first 50 ms. see config.py to change the value) of s2 at each of the microphones
+* s1_early : Contains only the early reflections (first 50 ms of RIR. See config.py to change the value) of s1 at each of the microphones
+* s2_early : Contains only the early reflections (first 50 ms of RIR. See config.py to change the value) of s2 at each of the microphones
 * noise : Contains the noise imposed for each mixture
 * mix : s1 + s2 + noise
 * list.yaml : A yaml file containing the positions and direction of arrival (DOA) for each utterance and speaker

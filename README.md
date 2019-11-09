@@ -39,3 +39,14 @@ Creates the following sub-folders in each of tr, tt and cv folders:
 ## References
 
 [Analyzing the impact of speaker localization errors on speech separation for automatic speech recognition](https://arxiv.org/abs/1910.11114)
+
+
+If you are using this code please cite the following paper:
+
+```
+@article{sivasankaran2019analyzing,
+    title={Analyzing the impact of speaker localization errors on speech separation for automatic speech recognition},
+    author={Sunit Sivasankaran and Emmaneul Vincent and Dominique Fohr},
+    year={2019},
+}
+```

@@ -57,7 +57,7 @@ If you are using this code please cite the following paper:
 ```
 @article{sivasankaran2019analyzing,
     title={Analyzing the impact of speaker localization errors on speech separation for automatic speech recognition},
-    author={Sunit Sivasankaran and Emmaneul Vincent and Dominique Fohr},
+    author={Sunit Sivasankaran and Emmanuel Vincent and Dominique Fohr},
     year={2019},
 }
 ```

@@ -17,7 +17,7 @@ Run ``` ./create_corrupted_speech.sh --stage 0 --wsj_data_path  wsj_path --chime
 * dihard_path : Path to dihard labels. Should contain ```*.lab``` files for the train and dev set
 
 
-### Stages:
+### Stages
 * stage 0:  Download RIR files (~ 7 GB) to save_path, deflate the compressed files and create a softlink to the RIRs in the current folder
 * stage 1:  Extract chime 5 noise using dihard labels
 * stage 2:  Create the mixture. See the code to allow parallelization
@@ -34,6 +34,17 @@ Creates the following sub-folders in each of tr, tt and cv folders:
 * noise : Contains the noise imposed for each mixture
 * mix : s1 + s2 + noise
 * list.yaml : A yaml file containing the positions and direction of arrival (DOA) for each utterance and speaker
+
+###### Hard disk usage
+
+
+| Dataset type   | Per sub-folder   | Total *  |
+|-----------|------------ |-------- |
+| Train (tr)| 21G         | 168G    |
+| Validation (cv)| 5.2G    | 41.6G   |
+| Test (tt) | 3.2G        |25.6G    |
+
+[*] Combination of mix, s1_early, s2_early, s1_direct, s2_direct and noise.
 
 
 ## References

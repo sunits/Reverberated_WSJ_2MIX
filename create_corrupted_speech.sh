@@ -1,10 +1,10 @@
-stage=2
+stage=0
 
 # Should contain 2speakers directory
-wsj_data_path="/media/sam/HitachiX360/wsj0-mix/"
-chime5_wav_base='/media/sam/ee430d77-96af-4264-8a84-1e24f308bd27/CHiME5/audio/'
-dihard_sad_label_path="/media/sam/HitachiX360/LDC2019E31_Second_DIHARD_Challenge_Development_Data/data/multichannel/sad/"
-dest="/media/sam/cb915f0e-e440-414c-bb74-df66b311d09d/sunit"
+wsj_data_path="/srv/storage/talc3@talc-data.nancy/multispeech/calcul/users/ssivasankaran/experiments/data/speech_separation/wsj0-mix/"
+chime5_wav_base='/srv/storage/talc@talc-data.nancy/multispeech/corpus/speech_recognition/CHiME5/audio/'
+dihard_sad_label_path="$HOME/experiments/data/dihard/LDC2019E31_Second_DIHARD_Challenge_Development_Data/data/multichannel/sad/"
+dest="dataset/2speakers_reverb_kinect"
 
 . ./parse_options.sh
 

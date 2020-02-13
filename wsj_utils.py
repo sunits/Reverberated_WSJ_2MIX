@@ -48,7 +48,7 @@ class SourceManager(object):
         if self.speech is None:
             self.speech, _ = sf.read(self.speech_file)
         if self.rir_data is None:
-            self.rir_data = np.loadtxt(self.rir_file)
+            self.rir_data = np.genfromtxt(self.rir_file)
 
     def reverberate(self):
         self.read_data()

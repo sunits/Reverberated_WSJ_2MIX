@@ -1,4 +1,5 @@
 stage=0
+
 # Should contain 2speakers directory
 wsj_data_path="/srv/storage/talc3@talc-data.nancy/multispeech/calcul/users/ssivasankaran/experiments/data/speech_separation/wsj0-mix/"
 chime5_wav_base='/srv/storage/talc@talc-data.nancy/multispeech/corpus/speech_recognition/CHiME5/audio/'
@@ -15,7 +16,7 @@ min_max="max"
 src_count=2 # Not implemented for other src counts
 tt_parallel="007"
 tr_parallel="049"
-cv_parallel="013"
+cv_parallel="012"
 tr_SNR=10
 cv_SNR=10
 tt_SNR=15

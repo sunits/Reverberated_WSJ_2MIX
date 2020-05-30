@@ -55,9 +55,11 @@ Creates the following sub-folders in each of tr, tt and cv folders:
 If you are using this code please cite the following paper:
 
 ```
-@article{sivasankaran2019analyzing,
-    title={Analyzing the impact of speaker localization errors on speech separation for automatic speech recognition},
-    author={Sunit Sivasankaran and Emmanuel Vincent and Dominique Fohr},
-    year={2019},
+@inproceedings{sivasankaran2019analyzing,  
+  booktitle = {2020 28th {{European Signal Processing Conference}} ({{EUSIPCO}})},  
+  title={Analyzing the impact of speaker localization errors on speech separation for automatic speech recognition},
+  author={Sunit Sivasankaran and Emmanuel Vincent and Dominique Fohr},
+  year={2021},  
+  month = Jan,  
 }
 ```
